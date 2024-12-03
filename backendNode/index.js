@@ -3,8 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import blogRoutes from './routes/blog.routes.js';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url'; // Required to construct __dirname in ES Modules
+// import path from 'path';
+//import { fileURLToPath } from 'url'; // Required to construct __dirname in ES Modules
 
 dotenv.config();
 
@@ -19,8 +19,8 @@ if (!MONGO_URI) {
 const app = express();
 
 // Construct __dirname in ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
@@ -30,12 +30,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/blogs", blogRoutes);
 
 // Serve static files from the React frontend
-app.use(express.static(path.join(__dirname, "frontendReact", "dist")));
+// app.use(express.static(path.join(__dirname, "frontendReact", "dist")));
 
 // Handle any other routes to serve React's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontendReact", "dist", "index.html"));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontendReact", "dist", "index.html"));
+// });
 
 // Connect to MongoDB and start the server
 mongoose.connect(MONGO_URI)
