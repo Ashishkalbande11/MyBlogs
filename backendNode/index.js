@@ -30,11 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/blogs", blogRoutes);
 
 // Serve static files from the React frontend
-app.use(express.static(path.join(__dirname, "frontendReact/vite-project", "dist")));
+app.use(express.static(path.join(__dirname, "frontendReact", "dist")));
 
 // Handle any other routes to serve React's index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontendReact/vite-project", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "frontendReact", "dist", "index.html"));
 });
 
 // Connect to MongoDB and start the server
