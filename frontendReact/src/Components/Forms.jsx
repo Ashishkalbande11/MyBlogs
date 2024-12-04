@@ -48,7 +48,7 @@ const Forms = () => {
               console.log("content missing")
               return;
             }
-            const data = await fetch("http://localhost:8080/blogs/newblog", {
+            const data = await fetch("https://myblogs-6.onrender.com/blogs/newblog", {
               method : "POST", 
               headers : {
                 'content-type' : 'application/json'

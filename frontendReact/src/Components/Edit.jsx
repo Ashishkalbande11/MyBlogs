@@ -10,7 +10,7 @@ const Edit = () => {
     const navigate = useNavigate();
     useEffect(() => {
         const getData = async() => {
-            const data = await fetch(`http://localhost:8080/blogs/${id}`);
+            const data = await fetch(`https://myblogs-6.onrender.com/blogs/${id}`);
             const json = await data.json();
             const {author, title, content} = json;
 
@@ -80,7 +80,7 @@ const Edit = () => {
         <div className="text-right">
         <button 
            onClick={async() => {
-                const data = await fetch(`http://localhost:8080/blogs/edit/${id}`, {
+                const data = await fetch(`https://myblogs-6.onrender.com/blogs/edit/${id}`, {
                     method : "PUT",
                     headers : {
                     'content-type' : 'application/json'

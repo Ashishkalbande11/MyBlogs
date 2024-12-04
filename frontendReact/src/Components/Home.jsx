@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/blogs");
+        const response = await fetch("https://myblogs-6.onrender.com/blogs");
         const json = await response.json();
         // console.log("Fetched blogs:", json);
         setBlogs(Array.isArray(json) ? json : []); // Ensure blogs is an array
@@ -22,7 +22,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/blogs/delete/${id}`, {
+      const response = await fetch(`https://myblogs-6.onrender.com/blogs/delete/${id}`, {
         method: "DELETE",
       });
 
