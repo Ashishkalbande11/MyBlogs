@@ -36,7 +36,7 @@ const Home = () => {
   };
   // console.log(blogs);
   return (
-    <div className="container mx-auto p-4 mt-6">
+    <div className="container mx-auto p-4 mt-6 md:w-[80%]">
       {Array.isArray(blogs) && blogs.map((item) => (
         <div
           key={item.id || item._id}
